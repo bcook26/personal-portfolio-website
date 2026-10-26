@@ -1,40 +1,34 @@
 "use client";
 
 import { Canvas, useFrame } from "@react-three/fiber";
-import { useMemo, useRef } from "react";
+import { useEffect, useRef, useState, useSyncExternalStore } from "react";
 import * as THREE from "three";
 
 const PARTICLE_COUNT = 60;
 const CONNECTION_DISTANCE = 1.25;
 
+// Module-level state: this file only loads client-side (see HeroVisual)
+const particles = Array.from({ length: PARTICLE_COUNT }, () => ({
+  position: new THREE.Vector3(
+    (Math.random() - 0.5) * 8,
+    (Math.random() - 0.5) * 5,
+    (Math.random() - 0.5) * 2
+  ),
+  velocity: new THREE.Vector3(
+    (Math.random() - 0.5) * 0.005,
+    (Math.random() - 0.5) * 0.005,
+    (Math.random() - 0.5) * 0.002
+  ),
+}));
+
+const pointPositions = new Float32Array(PARTICLE_COUNT * 3);
+
+// Worst case allocation
+const linePositions = new Float32Array(PARTICLE_COUNT * PARTICLE_COUNT * 6);
+
 function ParticleNetwork() {
   const pointsRef = useRef<THREE.Points>(null);
   const lineRef = useRef<THREE.LineSegments>(null);
-
-  // Generate particles once
-  const particles = useMemo(() => {
-    return Array.from({ length: PARTICLE_COUNT }, () => ({
-      position: new THREE.Vector3(
-        (Math.random() - 0.5) * 8,
-        (Math.random() - 0.5) * 5,
-        (Math.random() - 0.5) * 2
-      ),
-      velocity: new THREE.Vector3(
-        (Math.random() - 0.5) * 0.005,
-        (Math.random() - 0.5) * 0.005,
-        (Math.random() - 0.5) * 0.002
-      ),
-    }));
-  }, []);
-
-  const pointPositions = useMemo(() => {
-    return new Float32Array(PARTICLE_COUNT * 3);
-  }, []);
-
-  const linePositions = useMemo(() => {
-    // Worst case allocation
-    return new Float32Array(PARTICLE_COUNT * PARTICLE_COUNT * 6);
-  }, []);
 
   useFrame(() => {
     let pIndex = 0;
@@ -122,17 +116,50 @@ function ParticleNetwork() {
   );
 }
 
-export default function HeroCanvas() {
-  return (
-    <Canvas
-      camera={{
-        position: [0, 0, 7],
-        fov: 55,
-      }}
-    >
-      <ambientLight intensity={1} />
+const reducedMotionQuery = "(prefers-reduced-motion: reduce)";
 
-      <ParticleNetwork />
-    </Canvas>
+function subscribeReducedMotion(onChange: () => void) {
+  const query = window.matchMedia(reducedMotionQuery);
+  query.addEventListener("change", onChange);
+  return () => query.removeEventListener("change", onChange);
+}
+
+export default function HeroCanvas() {
+  const containerRef = useRef<HTMLDivElement>(null);
+  const [visible, setVisible] = useState(true);
+
+  const reducedMotion = useSyncExternalStore(
+    subscribeReducedMotion,
+    () => window.matchMedia(reducedMotionQuery).matches,
+    () => false
+  );
+
+  // Pause rendering while the hero is scrolled out of view
+  useEffect(() => {
+    const el = containerRef.current;
+    if (!el) return;
+
+    const observer = new IntersectionObserver(([entry]) =>
+      setVisible(entry.isIntersecting)
+    );
+    observer.observe(el);
+
+    return () => observer.disconnect();
+  }, []);
+
+  return (
+    <div ref={containerRef} className="h-full w-full">
+      <Canvas
+        frameloop={visible && !reducedMotion ? "always" : "demand"}
+        camera={{
+          position: [0, 0, 7],
+          fov: 55,
+        }}
+      >
+        <ambientLight intensity={1} />
+
+        <ParticleNetwork />
+      </Canvas>
+    </div>
   );
 }

@@ -1,4 +1,3 @@
-import Link from "next/link";
 import { Project } from "@/types/portfolio";
 
 type Props = {
@@ -15,7 +14,7 @@ export default function ProjectCard({ project }: Props) {
           {project.category}
         </span>
 
-        <span className="text-sm text-gray-500">
+        <span className="text-sm text-foreground/60">
           {project.status}
         </span>
 
@@ -25,9 +24,15 @@ export default function ProjectCard({ project }: Props) {
         {project.title}
       </h3>
 
-      <p className="mt-4 text-gray-600">
+      <p className="mt-4 text-foreground/70">
         {project.description}
       </p>
+
+      {project.architecture && (
+        <p className="mt-4 font-mono text-sm text-foreground/80">
+          {project.architecture.join(" → ")}
+        </p>
+      )}
 
       <div className="flex flex-wrap gap-2 mt-5">
 
@@ -49,14 +54,20 @@ export default function ProjectCard({ project }: Props) {
         <a
           href={project.github}
           target="_blank"
+          rel="noopener noreferrer"
         >
           GitHub →
         </a>
 
-        {/* Future */}
-        {/* <Link href={`/projects/${project.slug}`}>
-            Read More →
-        </Link> */}
+        {project.demo && (
+          <a
+            href={project.demo}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Live demo →
+          </a>
+        )}
 
       </div>
 
