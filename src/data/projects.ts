@@ -9,10 +9,19 @@ export const projects: Project[] = [
     category: "Data Engineering",
 
     description:
-      "Built an end-to-end data platform using Python ETL workflows, PostgreSQL, FastAPI, and Streamlit to provide golf statistics, analytics, and tournament predictions.",
+      "Built an end-to-end data platform: Apache Airflow automates player and stat extraction from public golf APIs into PostgreSQL data models, served through FastAPI and Streamlit for statistics, analytics, and tournament predictions.",
+
+    architecture: [
+      "Public APIs",
+      "Airflow",
+      "PostgreSQL",
+      "FastAPI",
+      "Streamlit",
+    ],
 
     technologies: [
       "Python",
+      "Airflow",
       "PostgreSQL",
       "FastAPI",
       "Streamlit",

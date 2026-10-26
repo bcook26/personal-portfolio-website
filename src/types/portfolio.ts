@@ -3,6 +3,7 @@ export interface Project {
   title: string;
   category: string;
   description: string;
+  architecture?: string[];
   technologies: string[];
   github: string;
   demo?: string;
@@ -15,8 +16,14 @@ export interface Experience {
   title: string;
   start: string;
   end: string;
-  description: string;
+  bullets: string[];
   technologies: string[];
+}
+
+export interface Education {
+  degree: string;
+  year: string;
+  focus: string;
 }
 
 export interface SkillGroup {

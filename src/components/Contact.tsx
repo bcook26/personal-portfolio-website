@@ -1,84 +1,64 @@
+const linkClass = "border rounded-lg px-6 py-3 hover:bg-foreground/10 transition";
+
 export default function Contact() {
-
   return (
+    <>
+      <section id="contact" className="scroll-mt-16 py-16 px-6">
 
-    <section className="py-16 px-6">
+        <div className="max-w-5xl mx-auto">
 
-      <div className="max-w-5xl mx-auto">
+          <h2 className="text-4xl font-bold mb-8">
+            Contact
+          </h2>
 
+          <p className="text-lg text-foreground/70 max-w-2xl">
+            I&apos;m looking for fully remote Data Engineering roles and am open
+            to relocating. I work in Eastern Time. Email is the best way to
+            reach me.
+          </p>
 
-        <h2 className="text-4xl font-bold mb-8">
-          Contact
-        </h2>
+          <div className="flex flex-wrap gap-4 mt-8">
 
+            <a href="mailto:brycecook2018@gmail.com" className={linkClass}>
+              Email
+            </a>
 
-        <p className="text-lg text-gray-600 max-w-2xl">
+            <a
+              href="https://github.com/bcook26"
+              target="_blank"
+              rel="noopener noreferrer"
+              className={linkClass}
+            >
+              GitHub
+            </a>
 
-          I'm always interested in connecting with other engineers,
-          discussing data engineering opportunities, or collaborating on
-          interesting projects.
+            <a
+              href="https://www.linkedin.com/in/bryce-cook-1a8960168/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className={linkClass}
+            >
+              LinkedIn
+            </a>
 
-        </p>
+            <a
+              href="/BryceCook_Resume.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className={linkClass}
+            >
+              Resume
+            </a>
 
-
-        <div className="flex flex-wrap gap-4 mt-8">
-
-
-          <a
-            href="mailto:brycecook2018@gmail.com"
-            className="
-              border
-              rounded-lg
-              px-6
-              py-3
-              hover:bg-gray-100
-              transition
-            "
-          >
-            Email
-          </a>
-
-
-
-          <a
-            href="https://github.com/bcook26"
-            target="_blank"
-            className="
-              border
-              rounded-lg
-              px-6
-              py-3
-              hover:bg-gray-100
-              transition
-            "
-          >
-            GitHub
-          </a>
-
-
-
-          <a
-            href="https://www.linkedin.com/in/bryce-cook-1a8960168/"
-            target="_blank"
-            className="
-              border
-              rounded-lg
-              px-6
-              py-3
-              hover:bg-gray-100
-              transition
-            "
-          >
-            LinkedIn
-          </a>
-
+          </div>
 
         </div>
 
+      </section>
 
-      </div>
-
-    </section>
-
+      <footer className="px-6 py-8 text-center text-sm text-foreground/60">
+        Bryce Cook · Data Engineer · Remote · open to relocating · Eastern Time
+      </footer>
+    </>
   );
 }

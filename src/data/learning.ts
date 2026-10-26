@@ -16,7 +16,7 @@ export const learning: LearningItem[] = [
 //   },
 
   {
-    title: "AWS",
+    title: "Azure",
 
     description:
       "Expanding experience with cloud-native data services.",

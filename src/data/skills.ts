@@ -2,6 +2,19 @@ import { SkillGroup } from "@/types/portfolio";
 
 export const skillGroups: SkillGroup[] = [
   {
+    title: "Data Engineering",
+
+    skills: [
+      "Apache Airflow",
+      "AWX",
+      "ETL / ELT",
+      "Dimensional Modeling",
+      "Data Warehousing",
+      "Batch Processing",
+    ],
+  },
+
+  {
     title: "Languages",
 
     skills: [
@@ -9,31 +22,18 @@ export const skillGroups: SkillGroup[] = [
       "SQL",
       "Bash",
       "TypeScript",
-      "C++",
     ],
   },
 
   {
-    title: "Data Engineering",
-
-    skills: [
-      "Apache Airflow",
-      "Apache Spark",
-      "PySpark",
-      "ETL / ELT",
-      "Data Modeling",
-      "Data Warehousing",
-    ],
-  },
-
-  {
-    title: "Databases",
+    title: "Databases & Storage",
 
     skills: [
       "PostgreSQL",
       "SQL Server",
       "Oracle",
       "MySQL",
+      "Azure Blob Storage",
     ],
   },
 
@@ -41,11 +41,23 @@ export const skillGroups: SkillGroup[] = [
     title: "Cloud & DevOps",
 
     skills: [
-      "AWS",
+      "Azure",
       "Docker",
       "Git",
       "GitHub",
       "Linux",
+      "CI/CD",
+    ],
+  },
+
+  {
+    title: "Apps & APIs",
+
+    skills: [
+      "FastAPI",
+      "Streamlit",
+      "Pandas",
+      "SQLAlchemy",
     ],
   },
 ];

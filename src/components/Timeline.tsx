@@ -1,38 +1,8 @@
-const experience = [
-  {
-    date: "May 2023 - Present",
-    title: "Data Engineer",
-    company: "Knoxville Utilities Board",
-    description:
-      "Develop and maintain Python-based ETL pipelines, automate data workflows, and build internal analytics applications supporting operational decision making.",
-    technologies: [
-      "Python",
-      "SQL",
-      "Airflow",
-      "PostgreSQL",
-      "Streamlit",
-      "AWS",
-    ],
-  },
-  {
-    date: "2022 - 2023",
-    title: "Data Engineering / Analytics Projects",
-    company: "Personal Development",
-    description:
-      "Built data-focused applications including web scrapers, dashboards, machine learning workflows, and data visualization projects.",
-    technologies: [
-      "Python",
-      "Pandas",
-      "Machine Learning",
-      "Tableau",
-    ],
-  },
-];
-
+import { education, experience } from "@/data/experience";
 
 export default function Timeline() {
   return (
-    <section className="py-16 px-6">
+    <section id="experience" className="scroll-mt-16 py-16 px-6">
 
       <div className="max-w-5xl mx-auto">
 
@@ -40,13 +10,12 @@ export default function Timeline() {
           Experience
         </h2>
 
-
-        <div className="relative border-l border-gray-300 ml-4">
+        <div className="relative border-l border-foreground/30 ml-4">
 
           {experience.map((item) => (
 
             <div
-              key={item.title}
+              key={`${item.company}-${item.title}`}
               className="mb-12 ml-8"
             >
 
@@ -54,35 +23,32 @@ export default function Timeline() {
               <div
                 className="
                   absolute
-                  -ml-[38px]
+                  -ml-[39px]
                   mt-2
                   h-4
                   w-4
                   rounded-full
-                  bg-black
+                  bg-foreground
                 "
               />
 
-
-              <p className="text-sm text-gray-500">
-                {item.date}
+              <p className="text-sm text-foreground/60">
+                {item.start} – {item.end}
               </p>
-
 
               <h3 className="text-2xl font-semibold mt-2">
                 {item.title}
               </h3>
 
-
-              <h4 className="text-lg">
+              <p className="text-lg">
                 {item.company}
-              </h4>
-
-
-              <p className="mt-4 text-gray-600 max-w-3xl">
-                {item.description}
               </p>
 
+              <ul className="mt-4 text-foreground/70 max-w-3xl list-disc pl-5 space-y-2">
+                {item.bullets.map((bullet) => (
+                  <li key={bullet}>{bullet}</li>
+                ))}
+              </ul>
 
               <div className="flex flex-wrap gap-2 mt-4">
 
@@ -105,13 +71,23 @@ export default function Timeline() {
 
               </div>
 
-
             </div>
 
           ))}
 
         </div>
 
+        <div className="mt-4 border rounded-xl p-6 max-w-3xl">
+          <p className="text-sm text-foreground/60">
+            Education · {education.year}
+          </p>
+          <h3 className="text-xl font-semibold mt-1">
+            {education.degree}
+          </h3>
+          <p className="mt-2 text-foreground/70">
+            {education.focus}
+          </p>
+        </div>
 
       </div>
 

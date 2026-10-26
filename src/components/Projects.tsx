@@ -3,7 +3,7 @@ import ProjectCard from "./ProjectCard";
 
 export default function Projects() {
   return (
-    <section className="py-16 px-6">
+    <section id="projects" className="scroll-mt-16 py-16 px-6">
 
       <div className="max-w-6xl mx-auto">
 

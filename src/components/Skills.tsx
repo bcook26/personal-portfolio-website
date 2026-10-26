@@ -1,69 +1,13 @@
-const skillGroups = [
-  {
-    title: "Programming Languages",
-    skills: [
-      "Python",
-      "SQL",
-      "Bash",
-      "C++",
-      "TypeScript"
-    ],
-  },
-  {
-    title: "Data Engineering",
-    skills: [
-      "Apache Airflow",
-      "Apache Spark",
-      "PySpark",
-      "ETL / ELT",
-      "Data Warehousing",
-      "Data Modeling",
-      "Batch Processing",
-    ],
-  },
-  {
-    title: "Databases",
-    skills: [
-      "PostgreSQL",
-      "SQL Server",
-      "Oracle",
-      "MySQL",
-      "Dimensional Modeling",
-    ],
-  },
-  {
-    title: "Cloud & DevOps",
-    skills: [
-      "AWS",
-      "Docker",
-      "Git",
-      "GitHub",
-      "Linux",
-      "CI/CD",
-    ],
-  },
-  {
-    title: "Frameworks & Tools",
-    skills: [
-      "FastAPI",
-      "Streamlit",
-      "Pandas",
-      "SQLAlchemy",
-      "Requests",
-    ],
-  },
-];
-
+import { skillGroups } from "@/data/skills";
 
 export default function Skills() {
   return (
-    <section className="py-16 px-6">
+    <section id="skills" className="scroll-mt-16 py-16 px-6">
       <div className="max-w-5xl mx-auto">
 
         <h2 className="text-4xl font-bold mb-12">
           Skills
         </h2>
-
 
         <div className="grid md:grid-cols-2 gap-8">
 
@@ -83,7 +27,6 @@ export default function Skills() {
                 {group.title}
               </h3>
 
-
               <div className="flex flex-wrap gap-3">
 
                 {group.skills.map((skill) => (
@@ -93,8 +36,7 @@ export default function Skills() {
                       px-3
                       py-1
                       rounded-full
-                      bg-gray-100
-                      text-gray-900
+                      bg-foreground/10
                       text-sm
                     "
                   >
