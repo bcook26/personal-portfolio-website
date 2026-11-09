@@ -51,13 +51,15 @@ export default function ProjectCard({ project }: Props) {
 
       <div className="flex gap-6 mt-6">
 
-        <a
-          href={project.github}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          GitHub →
-        </a>
+        {project.github && (
+          <a
+            href={project.github}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            GitHub →
+          </a>
+        )}
 
         {project.demo && (
           <a

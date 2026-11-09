@@ -12,9 +12,7 @@ export default function Contact() {
           </h2>
 
           <p className="text-lg text-foreground/70 max-w-2xl">
-            I&apos;m looking for fully remote Data Engineering roles and am open
-            to relocating. I work in Eastern Time. Email is the best way to
-            reach me.
+            I work in Eastern Time. Email is the best way to reach me.
           </p>
 
           <div className="flex flex-wrap gap-4 mt-8">
@@ -57,7 +55,7 @@ export default function Contact() {
       </section>
 
       <footer className="px-6 py-8 text-center text-sm text-foreground/60">
-        Bryce Cook · Data Engineer · Remote · open to relocating · Eastern Time
+        Bryce Cook · Data Engineer
       </footer>
     </>
   );

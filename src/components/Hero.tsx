@@ -7,7 +7,7 @@ export default function Hero() {
 
         <div>
           <p className="inline-block border rounded-full px-4 py-1 text-sm text-foreground/70">
-            Remote · open to relocating
+            Remote · Open to relocating
           </p>
 
           <h1 className="text-6xl font-bold mt-6">
