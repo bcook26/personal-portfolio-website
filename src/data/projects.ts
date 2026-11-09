@@ -9,7 +9,7 @@ export const projects: Project[] = [
     category: "Data Engineering",
 
     description:
-      "Built an end-to-end data platform: Apache Airflow automates player and stat extraction from public golf APIs into PostgreSQL data models, served through FastAPI and Streamlit for statistics, analytics, and tournament predictions.",
+      "Built an end-to-end data platform: Apache Airflow automates player and stat extraction from public golf APIs into PostgreSQL data models, served through FastAPI and ReactJS for statistics, analytics, and tournament predictions.",
 
     architecture: [
       "Public APIs",
@@ -29,7 +29,7 @@ export const projects: Project[] = [
     ],
 
     github:
-      "https://github.com/bcook26/golf-etl",
+      "https://github.com/bcook26/pga-golf-pipeline",
 
     featured: true,
 

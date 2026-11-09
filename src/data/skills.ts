@@ -10,7 +10,6 @@ export const skillGroups: SkillGroup[] = [
       "ETL / ELT",
       "Dimensional Modeling",
       "Medallion Architecture",
-      "Semantic Modeling",
       "Data Warehousing",
       "Batch Processing",
     ],
