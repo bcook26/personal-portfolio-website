@@ -19,8 +19,9 @@ export default function Hero() {
           </p>
 
           <p className="mt-6 text-lg max-w-xl">
-            I own production data pipelines end to end: ingestion directly from enterprise databases
-            and APIs, orchestration in Airflow, and the reporting built on top.
+            I lead data engineering at a utility: 95 production pipelines in Apache Airflow at 99.6%
+            reliability, from Oracle ingestion through medallion models to the forecasting and
+            reporting teams rely on.
           </p>
 
           <p className="mt-4 text-foreground/70">

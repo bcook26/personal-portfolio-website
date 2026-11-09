@@ -11,19 +11,20 @@ export const experience: Experience[] = [
     end: "Present",
 
     bullets: [
-      "Sole engineer on the migration of 95 production pipelines from Windows Task Scheduler to AWX (Git-versioned) and then Airflow. Jobs now have retries, failure alerts, centralized logs, and mostly automatic backfill, with a 99.6% overall run success rate over the past 6 months. Previously, failures went undetected.",
-      "Built a medallion architecture of reusable semantic models in SQL Server: bronze ingests from the meter and customer databases, silver enriches and validates, and gold serves reporting to field technicians, analysts, and support teams. Azure Blob Storage holds the bronze and silver interval data (4 years, ~11M rows per day).",
-      "Established the development workflow for a 20-developer organization: GitHub, code review, PR templates, and CI/CD. Developers write tests with each pipeline, and CI blocks merges to production until they pass.",
-      "Built an anomalous-billing pipeline that compares each key account's bill to 24 months of history using statistical ranges, replacing spreadsheets with Python ETL, audit logging, and automated monthly reports. It flags ~50 bills a month out of ~1,200 large-demand key accounts (~4%); ~62% are confirmed errors, saving ~20 hours of senior-staff review monthly.",
-      "Engineered the ETL behind gas demand forecasting, a new capability with no prior baseline that produces a daily forecast up to 3 years out, feeding a self-service web app that informs infrastructure decisions exceeding $10M. Forecast MAPE is 7.2%, and drift monitoring has triggered 2 retrains in the past year to keep the model current.",
-      "Built a batch ETL for fiber bandwidth telemetry: concurrent calls to a single API endpoint collect host and interface details, then a targeted final call aggregates hourly peak demand into SQL Server with timestamps and units, with logging and historical backfill. It sources ML models (best MAPE 4.9%) with automated drift-triggered retraining.",
-      "Migrated legacy MS Access reporting workflows into Airflow-managed pipelines.",
+      "Led the migration of 95 production pipelines from Windows Task Scheduler to AWX (Git-versioned), then Apache Airflow, as sole engineer on the project. Added retries, failure alerts, centralized logs, and backfill, reaching a 99.6% run success rate over 6 months; previously, failures went undetected.",
+      "Moved interval data out of a SQL Server instance nearing capacity into Azure Blob Storage (4 years, ~11M rows per day) and built a medallion architecture of dimensional models on top: bronze ingests meter and customer data from Oracle, silver enriches and validates, and gold serves technicians, analysts, and support teams.",
+      "Lead and set the engineering standards for a 20-developer data team: GitHub, code review, PR templates, and CI/CD. Developers write tests with each pipeline, and CI blocks merges to production until they pass, reducing failed deployments.",
+      "Built an anomalous-billing pipeline that compares key account bills ($5K-$3M per month) to 24 months of history using statistical ranges, replacing spreadsheets with Python ETL, audit logging, and automated monthly reports. Flags ~50 of ~1,200 large-demand accounts a month (~4%); ~62% are confirmed errors, saving ~20 hours of senior-staff review monthly.",
+      "Engineered the ETL behind gas demand forecasting, a new capability producing daily forecasts up to 3 years out in a self-service Streamlit app that informed a single $10M+ infrastructure purchase decision. Forecast MAPE is 7.2%, and drift monitoring has triggered 2 retrains in the past year.",
+      "Built a batch ETL and Streamlit app for fiber bandwidth planning: concurrent API calls collect second-level telemetry and aggregate it to hourly peak demand in SQL Server, with data-presence checks before backfills and freshness shown in the app. Peaks feed ML models (best MAPE 4.9%) with automated drift-triggered retraining.",
+      "Replaced 6 legacy MS Access workflows, full of unused and poorly labeled queries, with Streamlit self-service apps, including meter-testing monitoring and a construction-notice tool that sends biweekly gas-work notices to the print shop. Regex validation on fields like phone and zip code removed repeated manual entry.",
+      "Partner with Billing, Key Accounts, Meter Analytics, and Information Services to gather data requirements for an enterprise customer information system upgrade.",
     ],
 
     technologies: [
       "Python",
       "SQL",
-      "Airflow",
+      "Apache Airflow",
       "AWX",
       "Oracle",
       "SQL Server",
