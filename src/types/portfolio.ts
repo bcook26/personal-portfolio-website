@@ -5,7 +5,7 @@ export interface Project {
   description: string;
   architecture?: string[];
   technologies: string[];
-  github: string;
+  github?: string;
   demo?: string;
   featured: boolean;
   status: "Completed" | "In Progress";

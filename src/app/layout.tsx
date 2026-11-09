@@ -13,7 +13,7 @@ const geistMono = Geist_Mono({
 });
 
 const description =
-  "Data Engineer building Python ETL pipelines, Airflow orchestration, and analytics applications. Open to remote roles and relocation.";
+  "Data Engineer building Python ETL pipelines, Airflow orchestration, and analytics applications.";
 
 export const metadata: Metadata = {
   title: "Bryce Cook – Data Engineer",
