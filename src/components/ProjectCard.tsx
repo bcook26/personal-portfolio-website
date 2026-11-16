@@ -1,4 +1,5 @@
 import { Project } from "@/types/portfolio";
+import ImageCarousel from "./ImageCarousel";
 
 type Props = {
   project: Project;
@@ -27,6 +28,10 @@ export default function ProjectCard({ project }: Props) {
       <p className="mt-4 text-foreground/70">
         {project.description}
       </p>
+
+      {project.screenshots && project.screenshots.length > 0 && (
+        <ImageCarousel images={project.screenshots} />
+      )}
 
       {project.architecture && (
         <p className="mt-4 font-mono text-sm text-foreground/80">
