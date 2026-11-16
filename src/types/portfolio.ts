@@ -1,3 +1,8 @@
+export interface Screenshot {
+  src: string;
+  alt: string;
+}
+
 export interface Project {
   slug: string;
   title: string;
@@ -7,6 +12,7 @@ export interface Project {
   technologies: string[];
   github?: string;
   demo?: string;
+  screenshots?: Screenshot[];
   featured: boolean;
   status: "Completed" | "In Progress";
 }

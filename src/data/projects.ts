@@ -31,6 +31,15 @@ export const projects: Project[] = [
     github:
       "https://github.com/bcook26/pga-golf-pipeline",
 
+    screenshots: [
+      { src: "/images/player_landing_page.png", alt: "Player landing page" },
+      { src: "/images/player_stats.png", alt: "Player stats" },
+      { src: "/images/player_comparison.png", alt: "Player comparison" },
+      { src: "/images/leaderboard.png", alt: "Leaderboard" },
+      { src: "/images/tournament_standings.png", alt: "Tournament standings" },
+      { src: "/images/pipeline_health_airflow.png", alt: "Airflow pipeline health" },
+    ],
+
     featured: true,
 
     status: "Completed",
