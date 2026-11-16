@@ -1,6 +1,6 @@
 const stats = [
-  { value: "99.6%", label: "overall run success rate across 95 production Airflow pipelines" },
-  { value: "$10M+", label: "natural gas pipeline purchase decision informed by my 3-year daily demand forecast" },
+  { value: "99.6%", label: "run success rate (successful runs / total runs) across 95 production Airflow pipelines" },
+  { value: "$10M+", label: "natural gas pipeline purchase decision informed by a 3-year daily demand forecast fed by the ETL pipeline I built" },
   { value: "~20 hrs/mo", label: "of senior-staff review saved by automated billing anomaly detection" },
 ];
 
@@ -14,17 +14,20 @@ export default function About() {
 
         <div className="max-w-3xl text-lg text-foreground/70 space-y-6">
           <p>
-            I&apos;m a Data Engineer at Knoxville Utilities Board. I build
-            and run the pipelines that move meter and customer data through a
-            bronze, silver, and gold medallion architecture into the reporting
-            and forecasting that field teams, analysts, and executives rely on.
+            I&apos;m a Data Engineer at Knoxville Utilities Board. I build and
+            run the pipelines that move meter and customer data from enterprise
+            source systems through bronze, silver, and gold layers into
+            dimensional models, with orchestration, testing, and monitoring
+            around each one. Field teams, analysts, and executives use the
+            output for reporting and forecasting.
           </p>
 
           <p>
-            I work directly with Billing, Key Accounts, Meter Analytics, Information Services,
-            and executive leadership, and my Industrial &amp; Systems
-            Engineering background gives me a statistics-first approach to
-            data.
+            I work directly with Billing, Key Accounts, Meter Analytics,
+            Information Services, and executive leadership to gather
+            requirements. My Industrial &amp; Systems Engineering background
+            shapes a statistics-first approach: IQR and standard-deviation
+            checks, forecast error tracking, and drift monitoring.
           </p>
         </div>
 
