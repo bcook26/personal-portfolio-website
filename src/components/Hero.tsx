@@ -20,8 +20,10 @@ export default function Hero() {
 
           <p className="mt-6 text-lg max-w-xl">
             I lead data engineering for a regional utility, overseeing 95 production Apache
-            Airflow pipelines at 99.6% reliability, moving data from enterprise applications
-            and source databases through medallion models to power mission-critical operations.
+            Airflow pipelines at 99.6% reliability. They move data from enterprise applications
+            and source databases through medallion models into executive and department reporting,
+            forecasting workflows that feed model retraining, and statistical validation of
+            business data.
           </p>
 
           <p className="mt-4 text-foreground/70">
