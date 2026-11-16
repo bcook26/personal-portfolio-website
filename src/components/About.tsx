@@ -26,8 +26,8 @@ export default function About() {
             I work directly with Billing, Key Accounts, Meter Analytics,
             Information Services, and executive leadership to gather
             requirements. My Industrial &amp; Systems Engineering background
-            shapes a statistics-first approach: IQR and standard-deviation
-            checks, forecast error tracking, and drift monitoring.
+            gives me a foundation in probability and statistics, which I apply
+            to data validation, forecasting, and monitoring.
           </p>
         </div>
 
