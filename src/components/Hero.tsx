@@ -7,7 +7,7 @@ export default function Hero() {
 
         <div>
           <p className="inline-block border rounded-full px-4 py-1 text-sm text-foreground/70">
-            Remote · Open to relocating
+            Knoxville, TN · Remote · Open to relocating
           </p>
 
           <h1 className="text-6xl font-bold mt-6">
@@ -19,9 +19,9 @@ export default function Hero() {
           </p>
 
           <p className="mt-6 text-lg max-w-xl">
-            I lead data engineering at a utility: 95 production pipelines in Apache Airflow at 99.6%
-            reliability, from Oracle ingestion through medallion models to the forecasting and
-            reporting teams rely on.
+            I lead data engineering for a regional utility, overseeing 95 production Apache
+            Airflow pipelines at 99.6% reliability, moving data from enterprise applications
+            and source databases through medallion models to power mission-critical operations.
           </p>
 
           <p className="mt-4 text-foreground/70">

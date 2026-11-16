@@ -16,7 +16,7 @@ export const projects: Project[] = [
       "Airflow",
       "PostgreSQL",
       "FastAPI",
-      "Streamlit",
+      "React",
     ],
 
     technologies: [
@@ -24,7 +24,7 @@ export const projects: Project[] = [
       "Airflow",
       "PostgreSQL",
       "FastAPI",
-      "Streamlit",
+      "React",
       "ETL"
     ],
 
